@@ -15,9 +15,9 @@
         <div ng-controller="PlayerCtrl" class="player">
           <audio id="player" src="music/song.mp3" type="audio/mpeg"></audio>
             <h3>
-                <i class="fa" ng-class="{'fa-play': player.paused, 'fa-pause': !player.paused}" ng-click="play()"></i>
-                <i class="fa" ng-class="{'fa-volume-up': !player.muted, 'fa-volume-off': player.muted}" ng-click="mute()"></i>
-                {{ currentTime | playertime}} / {{ duration | playertime }}
+                <i class="fa play-button" ng-class="{'fa-play': player.paused, 'fa-pause': !player.paused}" ng-click="play()"></i>
+                <i class="fa mute-button" ng-class="{'fa-volume-up': !player.muted, 'fa-volume-off': player.muted}" ng-click="mute()"></i>
+                <span ng-show="duration">{{ currentTime | playertime}} / {{ duration | playertime }}</span>
             </h3>
             <h3>
                 <input type="range" min="0" max="{{duration}}" ng-model="currentTime" ng-change="setPosition()">

@@ -1,5 +1,10 @@
-html, body, .container {
-    height: 100%;
+.play-button {
+	width: 25px;
+}
+.mute-button {
+	width: 25px;
+	margin-left: 10px;
+	margin-right: 50px;
 }
 .player {
     width: 270px;
