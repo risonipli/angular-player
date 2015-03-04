@@ -16,15 +16,11 @@
           <audio id="player" src="music/song.mp3" type="audio/mpeg"></audio>
             <h3>
                 <i class="fa" ng-class="{'fa-play': player.paused, 'fa-pause': !player.paused}" ng-click="play()"></i>
-            </h3>
-            <h3>
                 <i class="fa" ng-class="{'fa-volume-up': !player.muted, 'fa-volume-off': player.muted}" ng-click="mute()"></i>
+                {{ currentTime | playertime}} / {{ duration | playertime }}
             </h3>
             <h3>
-                {{ player.currentTime }} / {{ duration }}
-            </h3>
-            <h3>
-                <input type="range" min="0" max="{{duration}}" ng-model="player.currentTime">
+                <input type="range" min="0" max="{{duration}}" ng-model="currentTime" ng-change="setPosition()">
             </h3>
         </div>
     </div>

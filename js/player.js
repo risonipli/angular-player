@@ -8,7 +8,7 @@ function($scope) {
 
 	function loadedmetadata() {
 		$scope.$apply(function() {
-			$scope.duration = $scope.player.duration;			
+			$scope.duration = $scope.player.duration;
 		})
 	};
 
@@ -36,4 +36,19 @@ function($scope) {
 		$scope.player.muted = !$scope.player.muted;
 	}
 
+	$scope.setPosition = function() {
+		$scope.player.currentTime = $scope.currentTime;
+	}
+
 }])
+
+.filter('playertime', function() {
+  return function(input) {
+  	input = Math.floor(input);
+  	var minutes = Math.floor(input / 60).toString();
+  	var seconds = Math.floor(input % 60).toString();
+
+  	if(seconds.length === 1) seconds = '0' + seconds;
+    return minutes + ':' + seconds;
+  };
+})
