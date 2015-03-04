@@ -1,0 +1,9 @@
+html, body, .container {
+    height: 100%;
+}
+.player {
+    width: 270px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
